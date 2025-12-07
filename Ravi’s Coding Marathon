@@ -1,0 +1,42 @@
+Ravi’s Coding Marathon
+Problem
+Submissions
+Leaderboard
+Discussions
+Ravi is participating in a week-long coding marathon, where each day offers a different amount of energy reward based on performance.
+
+Ravi wants to maximize his total energy over the entire marathon. But he must follow these rules:
+
+⚡ Rules
+
+If Ravi skips a day → he earns 0 energy and fully recovers.
+
+If Ravi works on day i without working on the previous day, he earns full energy[i].
+
+If Ravi works on day i after also working on day i−1 (two consecutive working days), fatigue kicks in, and he earns floor(energy[i] / 2).
+
+Ravi may choose to work or skip on any day.
+
+🎯 Goal
+
+Find the maximum total energy Ravi can earn.
+
+Input Format
+
+First line: integer N → number of days Second line: N integers representing energy[i] of each day (If N = 0, the second line will be empty)
+
+Constraints
+
+0 ≤ N ≤ 100000 0 ≤ energy[i] ≤ 10⁹
+
+Output Format
+
+A single integer → maximum total achievable energy
+
+Sample Input 0
+
+5
+5 3 4 11 2
+Sample Output 0
+
+18
