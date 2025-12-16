@@ -262,3 +262,154 @@ Optimize → Sliding Window
 Exact sum → Prefix Sum
 
 
+🧠 GRAPH, BFS, DFS & QUEUE — FINAL REVISION SHEET
+1️⃣ WHAT IS A GRAPH? (NO CONFUSION)
+
+A graph is nodes (vertices) connected by edges.
+
+Examples:
+
+Social network (people → friends)
+
+Road map (cities → roads)
+
+Internet (computers → cables)
+
+2️⃣ GRAPH TYPES (REMEMBER THIS TABLE)
+Type	Meaning
+Undirected	A — B (both ways)
+Directed	A → B (one way)
+Weighted	Edges have cost
+Unweighted	No cost
+
+🧠 Memory:
+
+Arrow = Directed, Number = Weighted
+
+3️⃣ GRAPH REPRESENTATION (EXAM FAVORITE)
+🔹 Adjacency List (MOST USED)
+graph = {
+  0: [1, 2],
+  1: [0, 3],
+  2: [0],
+  3: [1]
+}
+
+
+✔ Space efficient
+✔ Used in BFS & DFS
+
+4️⃣ BFS (Breadth-First Search)
+🧠 ONE LINE DEFINITION
+
+BFS visits level by level (nearest first)
+
+🔑 DATA STRUCTURE
+
+QUEUE
+
+🔹 BFS USE CASES
+
+Shortest path (unweighted graph)
+
+Level order traversal
+
+Nearest node problems
+
+🔹 BFS TEMPLATE (MEMORIZE)
+from collections import deque
+
+queue = deque([start])
+visited = set([start])
+
+while queue:
+    node = queue.popleft()
+
+    for nei in graph[node]:
+        if nei not in visited:
+            visited.add(nei)
+            queue.append(nei)
+
+
+🧠 Memory line:
+
+Push back, pop front
+
+5️⃣ DFS (Depth-First Search)
+🧠 ONE LINE DEFINITION
+
+DFS goes as deep as possible first
+
+🔑 DATA STRUCTURE
+
+STACK (or recursion)
+
+🔹 DFS USE CASES
+
+Path existence
+
+Cycle detection
+
+Connected components
+
+🔹 DFS TEMPLATE (RECURSION)
+visited = set()
+
+def dfs(node):
+    visited.add(node)
+
+    for nei in graph[node]:
+        if nei not in visited:
+            dfs(nei)
+
+
+🧠 Memory line:
+
+Go deep, then backtrack
+
+6️⃣ BFS vs DFS (NEVER MIX THIS UP)
+Feature	BFS	DFS
+Data structure	Queue	Stack / Recursion
+Order	Level by level	Depth first
+Shortest path	✅ Yes	❌ No
+Memory	More	Less
+
+🧠 One-liner:
+
+Shortest path → BFS
+
+7️⃣ QUEUE (SUPER IMPORTANT)
+🔹 Queue Rule
+
+FIFO — First In, First Out
+
+🔹 Operations
+enqueue → append()
+dequeue → popleft()
+
+
+🧠 Memory:
+
+Line at a ticket counter
+
+8️⃣ EXAM DECISION FLOW 🔥
+Graph problem?
+     ↓
+Shortest / nearest?
+     ↓ YES → BFS
+     ↓ NO
+Path / cycle / connected?
+     ↓ YES → DFS
+
+9️⃣ MOST COMMON EXAM TRAPS 🚨
+
+❌ Forgetting visited → infinite loop
+❌ Using DFS for shortest path
+❌ Confusing stack & queue
+❌ Not marking visited early in BFS
+
+🔟 FINAL MEMORY LOCK 🔐 (READ TWICE)
+
+Graph = nodes + edges
+BFS = Queue = Shortest
+DFS = Stack = Depth
