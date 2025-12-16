@@ -127,3 +127,138 @@ Optimize something?
 9️⃣ ONE-LINE FINAL MEMORY LOCK 🔒
 
 Sliding Window = Add right, remove left, update length
+
+
+🧠 SUBARRAYS — UNFORGETTABLE FINAL REVISION
+1️⃣ ONE LINE THAT DEFINES EVERYTHING
+
+A subarray is a CONTIGUOUS part of an array.
+
+If elements are next to each other, it’s a subarray.
+If you can skip elements, it is NOT a subarray.
+
+Array: [1, 2, 3, 4]
+
+Subarrays:
+[1], [2], [3], [4]
+[1,2], [2,3], [3,4]
+[1,2,3], [2,3,4]
+[1,2,3,4]
+
+
+❌ [1,3] → NOT a subarray
+✅ [2,3] → subarray
+
+2️⃣ THE ONE TEST (NEVER FAIL THIS)
+
+Ask yourself:
+
+Can I draw this using one continuous box?
+
+✔ Yes → Subarray
+❌ No → Not subarray
+
+3️⃣ TOTAL NUMBER OF SUBARRAYS (LOCK THIS 🔒)
+
+For array size n:
+
+Total subarrays = n × (n + 1) / 2
+
+
+Example:
+
+n = 4 → 4×5/2 = 10 subarrays
+
+
+🧠 Memory trick:
+
+1 + 2 + 3 + ... + n
+
+4️⃣ 3 COMMON QUESTION TYPES (100% COVERAGE)
+🔹 Type 1: PRINT / COUNT subarrays
+
+Brute force (2 loops):
+
+for i in range(n):
+    for j in range(i, n):
+        print(arr[i:j+1])
+
+
+Used when:
+
+Print all subarrays
+
+Count subarrays
+
+🔹 Type 2: SUBARRAY with MAX / MIN / SUM / LENGTH
+
+👉 SLIDING WINDOW (you already mastered this)
+
+Used when:
+
+Maximum sum subarray
+
+Longest subarray with condition
+
+Smallest subarray with condition
+
+🧠 Trigger words:
+
+Continuous + optimize
+
+🔹 Type 3: SUBARRAY SUM = K
+
+👉 Prefix Sum + HashMap
+
+Used when:
+
+Count subarrays with sum = K
+
+Works even with negative numbers
+
+🧠 Trigger words:
+
+Exact sum + negatives allowed
+
+5️⃣ DECISION TABLE (EXAM GOLD)
+Question asks	Technique
+Print all subarrays	2 loops
+Max / Min / Longest / Smallest	Sliding Window
+Sum = K (exact)	Prefix Sum
+Continuous elements	Subarray
+Can skip elements	Subsequence
+6️⃣ SUBARRAY vs SUBSEQUENCE (NEVER CONFUSE)
+Feature	Subarray	Subsequence
+Continuous	✅ Yes	❌ No
+Order matters	✅	✅
+Sliding window	✅	❌
+
+🧠 Memory:
+
+Subarray = “sub-ARRAY → stays together”
+
+7️⃣ MOST COMMON EXAM TRAPS 🚨
+
+❌ Using sliding window with negative numbers
+❌ Confusing subarray with subset
+❌ Forgetting contiguity
+❌ Using 3 loops when 1 window works
+
+8️⃣ ONE GLANCE FLOW (REMEMBER THIS)
+SUBARRAY QUESTION?
+        ↓
+Is it continuous?
+        ↓ YES
+Optimize?
+        ↓ YES → Sliding Window
+        ↓ NO  → 2 loops
+Exact sum?
+        ↓ YES → Prefix Sum
+
+9️⃣ FINAL MEMORY LOCK 🔐 (READ TWICE)
+
+Subarray = continuous block
+Optimize → Sliding Window
+Exact sum → Prefix Sum
+
+
