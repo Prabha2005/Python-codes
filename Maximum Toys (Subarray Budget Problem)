@@ -40,9 +40,6 @@ Explanation
 
 The subarray [3, 2, 1] has a total cost of 6, which is within the budget and has the maximum possible length.
 
-Function Signature (LeetCode Style)
-def maximumToys(prices: List[int], money: int) -> int:
-
 Approach
 
 Use the Sliding Window technique.
@@ -62,3 +59,6 @@ O(n)
 Space Complexity
 
 O(1)
+
+Python 3:
+
