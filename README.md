@@ -76,7 +76,7 @@ Problems are organized from basic Python logic to advanced data structure and in
 2. Linked List creation
 3. Linked List insert / delete operations
 
-6️⃣ Recursion Fundamentals - (Foundation for trees)
+## 6️⃣ Recursion Fundamentals - (Foundation for trees)
 * Recursive sum / traversal logic
 * Recursive subarray / decision problems
 
