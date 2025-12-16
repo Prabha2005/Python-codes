@@ -1,0 +1,129 @@
+# FINAL, LAST-TIME REVISION sheet for Sliding Window. #
+Save this. Read it once before exams/interviews. That’s enough.
+
+🧠 SLIDING WINDOW — FINAL REVISION (UNFORGETTABLE)
+1️⃣ WHEN to use Sliding Window (NO THINKING)
+
+Use it immediately if you see:
+Subarray / Substring
+Continuous elements
+Max / Min / Longest / Smallest
+
+👉 If all 3 appear → Sliding Window
+
+2️⃣ ONE CORE IDEA (REMEMBER FOREVER)
+
+Don’t recalculate. Reuse.
+
+Window moves like this:
+
+Add right
+
+Remove left
+
+3️⃣ TWO TYPES (ONLY THESE)
+🔹 A) FIXED WINDOW
+
+✔ Window size = k is given
+
+Examples
+
+Max sum of subarray of size k
+
+Average of size k
+
+Pattern
+
+window_sum = sum(arr[:k])
+answer = window_sum
+
+for i in range(k, n):
+    window_sum += arr[i]
+    window_sum -= arr[i-k]
+    answer = max(answer, window_sum)
+
+
+🧠 Memory line:
+
+Right enters, left exits
+
+🔹 B) VARIABLE WINDOW
+
+✔ Window size changes
+✔ Condition-based
+
+Examples
+
+Longest subarray with sum ≤ K
+
+Smallest subarray with sum ≥ K
+
+4️⃣ GOLDEN TEMPLATE (MEMORIZE THIS)
+left = 0
+current = 0
+answer = 0
+
+for right in range(n):
+    current += arr[right]      # expand
+
+    while condition breaks:
+        current -= arr[left]   # shrink
+        left += 1
+
+    answer = max(answer, right - left + 1)  # update
+
+
+🧠 Chant this:
+
+Expand → Check → Shrink → Update
+
+5️⃣ MOST IMPORTANT LINE (DO NOT FORGET)
+
+Update answer AFTER shrinking
+
+That is where people fail.
+
+right - left + 1
+
+6️⃣ YOUR EXACT PROBLEM (FINAL FORM)
+Longest Subarray with Sum ≤ K
+left = 0
+res = 0
+max_len = 0
+
+for right in range(n):
+    res += arr[right]
+
+    while res > k:
+        res -= arr[left]
+        left += 1
+
+    max_len = max(max_len, right - left + 1)
+
+print(max_len)
+
+
+✔ Works because all numbers are positive
+
+7️⃣ 10-SECOND DECISION RULE (EXAMS)
+
+Ask yourself:
+
+Continuous?
+
+Subarray?
+
+Optimize something?
+
+✔ YES → Sliding Window
+❌ NO → Not Sliding Window
+
+8️⃣ COMMON MISTAKES (AVOID THESE)
+
+❌ Updating answer before shrinking
+❌ Forgetting right - left + 1
+❌ Using sliding window with negative numbers (unless special case)
+
+9️⃣ ONE-LINE FINAL MEMORY LOCK 🔒
+
+Sliding Window = Add right, remove left, update length
