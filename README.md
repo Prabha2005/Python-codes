@@ -103,3 +103,93 @@ Problems are organized from basic Python logic to advanced data structure and in
 ## Author
 Lakshmi Prabha V  
 Python | DSA | Problem Solving
+
+# 📌 FINAL REVISION SHEETS (Last-Minute Interview Prep)
+
+Save this section. Read once before exams/interviews. Enough.
+
+# 🧠 Sliding Window — Final Revision
+
+When to use
+Subarray / Substring
+Continuous elements
+Max / Min / Longest / Smallest
+
+✔ If all appear → Sliding Window
+Core Idea
+Reuse previous computation.
+👉 Add right, remove left.
+
+Two Types
+Fixed Window → size k given
+Variable Window → condition based
+
+Golden Template
+left = 0
+current = 0
+ans = 0
+
+for right in range(n):
+    current += arr[right]
+
+    while condition_breaks:
+        current -= arr[left]
+        left += 1
+
+    ans = max(ans, right - left + 1)
+
+🔒 Memory lock: Expand → Shrink → Update
+
+# 🧠 Subarrays — One-Page Concept Lock
+Definition
+A subarray is always continuous.
+❌ [1,3] → not subarray
+✅ [2,3] → subarray
+
+Total subarrays
+n * (n + 1) / 2
+
+Technique Decision
+Question	Use
+Print / Count	2 loops
+Max / Min / Longest	Sliding Window
+Sum = K (exact)	Prefix Sum
+
+🔒 Memory:
+Subarray = stays together
+🧠 Graph, BFS & DFS — Final Lock
+
+# Graph
+Nodes + Edges
+Directed / Undirected
+Weighted / Unweighted
+
+BFS
+Queue
+Shortest path
+Level order
+
+from collections import deque
+q = deque([start])
+visited = set([start])
+while q:
+    node = q.popleft()
+    for nei in graph[node]:
+        if nei not in visited:
+            visited.add(nei)
+            q.append(nei)
+
+
+# DFS
+Stack / Recursion
+Path / Cycle / Components
+
+def dfs(node):
+    visited.add(node)
+    for nei in graph[node]:
+        if nei not in visited:
+            dfs(nei)
+
+🔒 Rule
+Shortest path → BFS
+Deep traversal → DFS
