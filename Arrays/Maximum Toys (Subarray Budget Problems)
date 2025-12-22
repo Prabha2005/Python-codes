@@ -1,1 +1,78 @@
+📌 Problem: Maximum Toys (Subarray Budget Problem)
+Problem Statement
 
+You are given an array prices where each element represents the price of a toy. You are also given an integer money representing your total budget.
+
+Your task is to find the maximum number of consecutive toys you can buy such that the total cost does not exceed the given budget.
+
+Return the maximum length of a contiguous subarray whose sum is less than or equal to money.
+
+Input Format
+
+The first line contains an integer n, the number of toys.
+
+The second line contains n space-separated integers representing the prices of the toys.
+
+The third line contains an integer money, representing the budget.
+
+Output Format
+
+Print a single integer — the maximum number of consecutive toys that can be bought within the given budget.
+
+Constraints
+
+1 ≤ n ≤ 10⁵
+
+1 ≤ prices[i] ≤ 10⁵
+
+1 ≤ money ≤ 10⁹
+
+Example
+Input
+7
+1 4 5 3 2 1 6
+6
+
+Output
+3
+
+Explanation
+
+The subarray [3, 2, 1] has a total cost of 6, which is within the budget and has the maximum possible length.
+
+Approach
+
+Use the Sliding Window technique.
+
+Maintain a window with two pointers to track consecutive toys.
+
+Expand the window by including the next toy.
+
+Shrink the window when the total price exceeds the budget.
+
+Track the maximum window size.
+
+Time Complexity
+
+O(n)
+
+Space Complexity
+
+O(1)
+
+Python 3:
+n = int(input())
+arr = [int(digit) for digit in input().split()][:n]
+money = int(input())
+
+left = 0
+max_len = 0
+res = 0
+for right in range(n):
+    res += arr[right]
+    while res > money:
+        res -= arr[left]
+        left += 1
+    
+    max_len = max(max_len, right - left + 1)
+print(max_len)
