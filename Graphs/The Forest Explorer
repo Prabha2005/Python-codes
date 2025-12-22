@@ -1,0 +1,52 @@
+The Forest Explorer
+Problem
+Submissions
+Leaderboard
+Discussions
+A young forest explorer, Aarav, is tracking the locations of rare trees in a forest. Each tree has a unique height. As he moves deeper into the forest, he plants trees at different spots and keeps track of them in a special system.
+
+He wants to organize these trees so that searching for a particular height is easier. Therefore, he builds a Binary Search Tree (BST) where:
+
+Every tree's height is unique.
+
+The left branch contains trees shorter than the current tree.
+
+The right branch contains trees taller than the current tree.
+
+Now, Aarav is curious about what trees are at a particular depth in the forest. You are tasked to help him find and print all trees at level K from the root. Note: - Level 0 is the root. - The tree is built as a BST by inserting nodes one by one.
+
+Input Format
+
+The first line contains space-separated integers representing the heights of the trees (the BST nodes), in the order they are inserted.
+
+The second line contains the integer K, representing the level whose nodes need to be printed.
+
+Constraints
+
+1 <= N <= 10^5 Where N is the number of nodes in the BST.
+
+0 <= K <= N-1
+
+1 <= tree height <= 10^9
+
+All tree heights are unique.
+
+Output Format
+
+Print all the tree heights at level K separated by spaces, from left to right.
+
+If no nodes are present at that level, print an empty line.
+
+Sample Input 0
+
+15 10 20 8 12 17 25
+1
+Sample Output 0
+
+10 20
+Explanation 0
+15
+/\
+10 20
+/\ /\
+8 12 17 25
