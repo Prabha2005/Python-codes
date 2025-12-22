@@ -125,6 +125,7 @@ Fixed Window → size k given
 Variable Window → condition based
 
 Golden Template
+
 left = 0
 current = 0
 ans = 0
