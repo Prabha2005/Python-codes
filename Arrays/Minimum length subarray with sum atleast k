@@ -1,0 +1,46 @@
+Given an array & of N integers, and an integer K. write a program to find the letigth of minimum length subarray whose sum is greater than or equal to K
+level: Medium
+Input
+First line contains twe space separated integers N and K
+Second line contains ti space separated integers of A
+
+Output
+
+Print a single integer representing the minimum length of such subarray. If no such subarray exists, print 0
+
+Explanation
+
+In the Sample input 1, there are many subarrays with a sum greater than 9. But the subarrays with sum equal to 9 are (5.3. 11. 12. 4. 3), and (3, 6). As the subarray (3, 6) has minimum length, the output is 2.
+
+Constraints
+
+1 <= N <= 3*10^5
+
+1 <= K <= 3*10^6
+
+1 <= A[i]  <= 10^5
+
+Companies: Amazon, Google, Microsoft, ByteDance, Goldman Sachs, Bloomberg, Facebook, Oracle, Apple, Wish, SAP
+Hint: Use Two pointers as Windows
+
+Python 3.10
+mini = float("inf")
+def mini_subarray_length(a,b, arr):
+    left = 0
+    add = 0
+   
+    res = mini
+    for right in range(a):
+        add += arr[right]  # expand window
+        while add >= b:  # valid window
+            res = min(res, right - left + 1)
+            add -= arr[left]  # shrink window
+            left += 1
+    if res != mini:
+        print(res)
+    else:
+        print("0")
+    return
+a, b = map(int, input().split())
+arr = [int(num) for num in input().split()][:a]
+mini_subarray_length(a, b, arr)
