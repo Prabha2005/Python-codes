@@ -1,0 +1,61 @@
+Level: Easy
+
+Given an array A of N lerigth containing Os and 1s, and an integer K representing the number of flips allowed. 
+You can flip Os into 1s at most K times. Write an efficient program to find the longest continuous series of is while performing at most K flips
+
+Input
+First line contains two space separated integers N and K Second line contains N space separated integers of A
+
+Output
+Print the start index and the end index of the longest continuous series based on the above context. 
+If there are multiple solutions, print the one with minimum start index.
+
+Explanation
+in Sample input 1 we are allowed to make only 1 flip. if we flip the O present at the 3rd index, we get the maximum number of continuous ones. So the output is 14.
+
+Constraints
+1 <= N, K <= 3 * 10^5
+0 <= A[i] <= 1
+
+Sample Input 1
+9 1
+0 1 1 0 1 0 0 0 1
+
+Sample Output 1
+1 4
+
+Sample Input 2
+10 2
+1 0 1 1 0 1 0 0 1 1
+
+Sample Output 2
+0 5
+
+Hint:
+Use a sliding window.
+
+Companies: Amazon, VMWare
+
+Python 3.10:
+def maxi_continuous(a, b, arr):
+    maxLen = -100000000000
+    left = right = start_idx = 0
+    
+    while right < a:
+        while right < a and (arr[right] == 1 or b > 0):
+            if arr[right] == 0:
+                b -= 1
+            right += 1
+        length = right - left
+        if length > maxLen:
+            maxLen = length
+            start_idx = left
+        while left < a and arr[left] == 1:
+            left += 1
+        left += 1
+        b += 1
+    print(start_idx, start_idx+maxLen-1)
+
+a, b= map(int, input().split())
+arr = [int(val) for val in input().split()][:a]
+maxi_continuous(a, b, arr)
