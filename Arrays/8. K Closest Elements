@@ -1,0 +1,75 @@
+Given a sorted(non-decreasing) array A of N length, and two integers K, X. 
+Write an efficient program to find K closest elements to X in A Note. 
+If there is a tie between two elements in terms of closeness, choose the minimum one
+
+Input
+First line contains three space separated integers N, K, and X Second line contains N space separated integers of A.
+
+Output
+Print the K elements of A in sorted(non-decreasing) order based on the above context
+
+Explanation
+In Sample Input 1, we need to find the two closest elements. The first closest element is 7. 
+For the second closest element, there is a tie between 6 and 10 as (10-8 is equal to 8-6). 
+Here we choose 6, as it is mentioned in the question text to choose the minimum number in case of a tie. Therefore, the output is 67.
+
+Constraints
+
+1<= N <= 3*10^5
+
+-10^9 <= A[i] <= 10^9
+
+1 <= K <= N
+
+-10^9 < X <= 10^9
+
+Sample Input 1
+
+5 2 8
+
+1 3 6 7 10
+
+Sample Output 1
+
+6 7
+
+Sample Input 2
+
+5 3 6
+
+1 3 5 7 10
+
+Sample Output 2
+
+3 5 7
+
+Hint 1
+Find the closest element to X and from there find the K closest elements.
+
+Hint 2
+The K closest elements always exist as a subarray of size K.
+
+Companies: Amazon, Apple, Bloomberg, eBay, Facebook, Google, Microsoft, Snapchat,Uber
+
+Python 3.10
+def k_closest_ele(a,b,c,arr):
+    low = 0
+    high = a - b
+    while low < high:
+        mid = (low + high) // 2
+        if c >= arr[mid+b]:
+            low = mid + 1
+        elif c <= arr[mid]:
+            high = mid
+        elif (arr[mid+b] + arr[mid]) / 2 < c:
+            low = mid + 1
+        else:
+            high = mid
+    for i in range(low, low + b):
+        print(arr[i], end = " ")
+    return
+
+        
+a, b, c = map(int, input().split())
+arr = [int(val) for val in input().split()][:a]
+k_closest_ele(a,b,c,arr)
