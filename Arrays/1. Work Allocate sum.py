@@ -1,3 +1,4 @@
+'''''
 work Allocate sum
 Problem
 Submissions
@@ -27,3 +28,4 @@ Sample Input 0
 Sample Output 0
 
 60
+'''''
