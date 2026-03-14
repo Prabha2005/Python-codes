@@ -1,0 +1,44 @@
+Problem Solving Session
+End keyword
+In Python, the end keyword is used in the print() statement to specify what should be printed at the end of the output.
+
+By default, print() statement moves the cursor to the next line after printing. Using the end keyword, we can print the outputs on a single line.
+
+Example:
+
+PYTHON
+1234
+N = 3for i in range(N):    print("* ", end="")
+Output:
+
+* * *
+We can a specify character or string with which the output will end using end keyword.  
+
+PYTHON
+1234
+N = 3for i in range(N):    print("* ", end="abc")
+Output:
+
+* abc* abc* abc
+As we can see, * is printed with abc at the end of each iteration, all on the same line.
+
+print() statement
+By default, each time you call print(), it takes the cursor to a new line, which means the next time you print something, it will start on a new line.
+
+The print() statement without any value indicates the next output should be printed in the next line.
+
+Example:
+
+Code:
+
+PYTHON
+123456
+N = int(input())  for i in range(N):    for i in range(N):        print("*", end=" ")    print()
+Output:
+
+* * * * * * * * *
+Solution Explanation
+The outer loop iterates N times, and the inner loop also iterates N times.
+In the inner loop, we print a star (*) with a space as a separator between stars in the same line as we are using end=" " keyword.
+After printing N stars in the inner loop, the inner loop terminates, and print() is executed and the cursor moves to the next line.
+The outer loop iterates N times and creates a square pattern with stars.
