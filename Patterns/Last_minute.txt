@@ -1,9 +1,0 @@
-1. Identify the relationship between the total number of lines and input.
-2. Identify the elements in the patterns, properly (+, -)
-3. Identify the relationship between row number (j) and (n) with the number of elements
-4. Model the relationships in the code
-
-
-  ----relationship----
-  |                  |
-Input ---> Code ---> Output
