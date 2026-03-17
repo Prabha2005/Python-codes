@@ -1,0 +1,12 @@
+Pattern problems using Nested Loops
+
+Examples:
+
+1. Square pattern with (*)
+2. Right angled triangle pattern with (*)
+3. Right angled triangle patterns with numbers
+
+Concepts:
+
+1. end parameter in print()
+2. What are outer & inner loops responsible for?

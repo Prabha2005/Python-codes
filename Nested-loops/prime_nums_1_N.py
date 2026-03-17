@@ -59,5 +59,3 @@ for m in range(2, n+1):
             num_of_factors += 1
     if num_of_factors == 0:
         print(m)
-
-34.50
