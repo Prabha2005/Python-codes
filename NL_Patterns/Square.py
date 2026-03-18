@@ -34,4 +34,3 @@ for i in range(n): # Outer Loop
         print("*", end=" ")
     print()
 
-    19.06
